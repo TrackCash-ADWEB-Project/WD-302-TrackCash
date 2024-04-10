@@ -1,7 +1,6 @@
-# TrackCash Application Setup Guide
+TrackCash Application Setup Guide
 
-**Developed by:**
-
+Developed by:
      CASTRO, EZRALYN S.
      NUNAG, JAIRA MICAH P.
      PARAS, SHANE NICOLE B.

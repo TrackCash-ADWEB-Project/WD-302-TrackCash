@@ -1,6 +1,5 @@
 # TrackCash Application Setup Guide
 
-
 **Developed by:**
 
      CASTRO, EZRALYN S.

@@ -1,0 +1,40 @@
+body {
+    background-color: whitesmoke;
+}
+
+.btn {
+    margin-inline: 3px;
+}
+
+.add-item {
+    background-color: #37479f;
+    color: white;
+}
+
+.page-icon {
+    fill: #37479f;
+    width: 200px;
+    height: 200px;
+    padding-bottom: 2rem;
+}
+
+.section-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount-txt {
+    color: #dc3546;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.date-txt {
+    color: #737373;
+}
+
+.btn-edit {
+    background-color: #37479f;
+    color: white;
+}

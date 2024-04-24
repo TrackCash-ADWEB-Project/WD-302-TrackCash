@@ -1,0 +1,50 @@
+<body>
+    <br><br>
+    <div class="section-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-cart4 page-icon" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+          </svg>
+    </div>
+
+    <h5 style="text-align: center;">HERE IS YOUR LIST OF</h5>
+    <h1 style="text-align: center; font-weight: 600;">Expenses</h1>
+    <p style="text-align: center;">
+        Take control of your saved expense transactions here. 
+        <br> Manage, delete, and edit them right here with ease. 
+    </p>
+
+    <div class="input-group mb-3" style="margin-left: auto; margin-right: auto; width: 30rem;">
+        <input type="date" class="form-control" name="searchDate" [(ngModel)]="searchDate">
+        <button class="btn add-item" (click)="searchTransactions()">SEARCH HERE</button>
+    </div>
+
+    <div *ngFor="let transaction of expenseTransactions; let i = index" class="container" style="padding: .5rem;">
+
+        <div class="card w-100">
+            <div class="card-body d-flex align-items-center" style="margin-right: 1rem;">
+                
+                <div class="flex-grow-1 ms-3">
+                    <h5 class="card-title loc-name">{{transaction.transaction_name}}</h5>
+                    <p class="card-text date-txt">{{ transaction.date | date: 'MM/dd/yyyy' }}</p>
+                </div>
+
+                <div class="ms-3">
+                    <p class="card-text amount-txt">- {{transaction.amount}}</p>
+                </div>
+
+                <div class="ms-3">
+                    <button type="button" class="btn btn-edit" routerLink="/edit-expense/{{transaction._id}}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                      </svg></button>
+                    <button type="button" class="btn btn-danger" (click)="delete(transaction._id, i)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                      </svg></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
